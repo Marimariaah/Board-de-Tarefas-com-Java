@@ -1,11 +1,5 @@
 package br.com.dio.persistence.migration;
 
-import liquibase.Liquibase;
-import liquibase.database.jvm.JdbcConnection;
-import liquibase.exception.LiquibaseException;
-import liquibase.resource.ClassLoaderResourceAccessor;
-import lombok.AllArgsConstructor;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -13,9 +7,17 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import static br.com.dio.persistence.config.ConnectionConfig.getConnection;
+import liquibase.Liquibase;
+import liquibase.database.jvm.JdbcConnection;
+import liquibase.exception.LiquibaseException;
+import liquibase.resource.ClassLoaderResourceAccessor;
 
-@AllArgsConstructor
+
 public class MigrationStrategy {
+
+    public MigrationStrategy(java.sql.Connection connection) {
+        this.connection = connection;
+    }
 
     private final Connection connection;
 

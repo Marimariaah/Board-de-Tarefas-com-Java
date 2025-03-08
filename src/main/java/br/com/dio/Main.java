@@ -1,11 +1,10 @@
 package br.com.dio;
 
-import br.com.dio.persistence.migration.MigrationStrategy;
-import br.com.dio.ui.MainMenu;
-
 import java.sql.SQLException;
 
 import static br.com.dio.persistence.config.ConnectionConfig.getConnection;
+import br.com.dio.persistence.migration.MigrationStrategy;
+import br.com.dio.ui.MainMenu;
 
 
 public class Main {

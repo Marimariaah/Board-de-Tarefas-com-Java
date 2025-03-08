@@ -73,6 +73,7 @@ public class MainMenu {
         columns.add(cancelColumn);
 
         entity.setBoardColumns(columns);
+
         try(var connection = getConnection()){
             var service = new BoardService(connection);
             service.insert(entity);
